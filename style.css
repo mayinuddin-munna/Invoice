@@ -1,0 +1,21 @@
+body{
+    background-color: blue;
+}
+big-fontsize{
+    font-size: 50px;
+}
+p{
+    font: 25px;
+}
+.border{
+    border-radius: 0;
+}
+.capital-font{
+    text-transform: uppercase;
+}
+.color-one{
+    color: #fa804c;
+}
+.color-two{
+    color: #363958;
+}
