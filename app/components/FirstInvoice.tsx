@@ -5,6 +5,7 @@ import { Label } from "./ui/label";
 import { Separator } from "./ui/separator";
 import { Printer, Download, Plus, Trash2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { jsPDF } from "jspdf";
 
 interface LineItem {
   id: string;
@@ -83,6 +84,28 @@ export default function FirstInvoice() {
     window.print();
   };
 
+  const handleDownload = () => {
+    const doc = new jsPDF();
+
+    // Example invoice data
+    doc.setFontSize(16);
+    doc.text("INVOICE", 85, 20);
+
+    doc.setFontSize(12);
+    doc.text("Invoice No: #12345", 20, 40);
+    doc.text("Date: 15 Oct 2025", 20, 50);
+    doc.text("Customer: John Doe", 20, 60);
+    doc.text("Item: Web Development Service", 20, 80);
+    doc.text("Amount: $500", 20, 90);
+
+    // Add footer
+    doc.setFontSize(10);
+    doc.text("Thank you for your business!", 70, 280);
+
+    // Download the file
+    doc.save("invoice.pdf");
+  };
+
   return (
     <div className="mx-auto max-w-4xl">
       <Card className="overflow-hidden bg-card shadow-lg print:shadow-none">
@@ -110,9 +133,7 @@ export default function FirstInvoice() {
           {/* Bill To & Dates */}
           <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <Label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Bill To
-              </Label>
+              <Label className="input-label">Bill To</Label>
               <div className="mt-3 space-y-1">
                 <Input
                   placeholder="Client Name"
@@ -133,10 +154,7 @@ export default function FirstInvoice() {
 
             <div className="space-y-4">
               <div>
-                <Label
-                  htmlFor="invoice-number"
-                  className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
-                >
+                <Label htmlFor="invoice-number" className="input-label">
                   Invoice Number
                 </Label>
                 <Input
@@ -147,10 +165,7 @@ export default function FirstInvoice() {
                 />
               </div>
               <div>
-                <Label
-                  htmlFor="invoice-date"
-                  className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
-                >
+                <Label htmlFor="invoice-date" className="input-label">
                   Invoice Date
                 </Label>
                 <Input
@@ -162,10 +177,7 @@ export default function FirstInvoice() {
                 />
               </div>
               <div>
-                <Label
-                  htmlFor="due-date"
-                  className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
-                >
+                <Label htmlFor="due-date" className="input-label">
                   Due Date
                 </Label>
                 <Input
@@ -183,7 +195,7 @@ export default function FirstInvoice() {
 
           {/* Line Items */}
           <div>
-            <div className="mb-4 grid grid-cols-12 gap-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <div className="mb-4 grid grid-cols-12 gap-4 input-label">
               <div className="col-span-5">Description</div>
               <div className="col-span-2 text-right">Quantity</div>
               <div className="col-span-2 text-right">Rate</div>
@@ -290,9 +302,7 @@ export default function FirstInvoice() {
 
           {/* Payment Info */}
           <div>
-            <Label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Payment Information
-            </Label>
+            <Label className="input-label">Payment Information</Label>
             <div className="mt-3 space-y-1 text-sm text-foreground">
               <p>Bank: First National Bank</p>
               <p>Account Name: Your Company LLC</p>
@@ -303,9 +313,7 @@ export default function FirstInvoice() {
 
           {/* Notes */}
           <div>
-            <Label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Notes
-            </Label>
+            <Label className="input-label">Notes</Label>
             <textarea
               className="mt-3 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               rows={3}
@@ -326,7 +334,7 @@ export default function FirstInvoice() {
                 <Printer className="mr-2 h-4 w-4" />
                 Print
               </Button>
-              <Button size="sm">
+              <Button onClick={handleDownload} size="sm">
                 <Download className="mr-2 h-4 w-4" />
                 Download PDF
               </Button>

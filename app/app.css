@@ -10,7 +10,7 @@
 
 html,
 body {
-  @apply bg-[#101010] dark:bg-gray-950;
+  @apply bg-white/80 dark:bg-gray-950;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -131,4 +131,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.input-label{
+  @apply text-xs font-semibold uppercase tracking-wide text-muted-foreground;
 }

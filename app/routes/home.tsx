@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import FirstInvoice from "~/components/FirstInvoice";
+import { SecondInvoice } from "~/components/SecondInvoice";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +10,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <FirstInvoice />;
+  return (
+    <div className="">
+      <FirstInvoice /> <br />
+      <SecondInvoice />
+    </div>
+  );
 }
