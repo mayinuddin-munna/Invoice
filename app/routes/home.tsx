@@ -1,9 +1,5 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
-import FirstInvoice from "~/components/FirstInvoice";
-import { SecondInvoice } from "~/components/SecondInvoice";
-import ProFormaInvoice from "~/components/ProFormaInvoice";
-import Recurring from "~/components/Recurring";
 
 import FirstImage from "../../public/images/general-invoice.png";
 import SecondImage from "../../public/images/car-invoice.png";
@@ -21,37 +17,32 @@ type DataInvoice = {
   url: string;
   image: string;
   category: string;
-  component: React.ComponentType<any>;
 };
 
 const invoiceData: DataInvoice[] = [
   {
     id: 1,
-    url: "/first-invoice",
+    url: "/general-invoice",
     image: FirstImage,
-    category: "CATEGORY",
-    component: FirstInvoice,
+    category: "General Invoice",
   },
   {
     id: 2,
-    url: "url-parameter",
+    url: "/car-invoice",
     image: SecondImage,
-    category: "CATEGORY",
-    component: SecondInvoice,
+    category: "Car Invoice",
   },
   {
     id: 3,
-    url: "url-parameter",
+    url: "/standard-invoice",
     image: StandardInvoice,
-    category: "CATEGORY",
-    component: ProFormaInvoice,
+    category: "Standard Invoice",
   },
   {
     id: 4,
-    url: "url-parameter",
+    url: "/recurring-invoice",
     image: SecondImage,
-    category: "CATEGORY",
-    component: Recurring,
+    category: "Recurring Invoice",
   },
 ];
 
@@ -64,7 +55,7 @@ export default function Home() {
             <div key={data?.id} className="p-4 lg:w-1/3 md:w-1/2 w-full">
               <Link
                 to={data?.url}
-                className="block relative group rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                className="block relative group rounded-md overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               >
                 <img
                   src={data?.image}
