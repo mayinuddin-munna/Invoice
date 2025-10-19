@@ -14,7 +14,7 @@ export function SecondInvoice() {
   const [rentalDays, setRentalDays] = useState(15);
 
   // Pick-up details
-  const [pickupDate, setPickupDate] = useState("20 Feb 2022");
+  const [pickupDate, setPickupDate] = useState("20 Feb 2025");
   const [pickupLocation, setPickupLocation] = useState(
     "33 Bluebird Road, North York, Ontario, Australia"
   );

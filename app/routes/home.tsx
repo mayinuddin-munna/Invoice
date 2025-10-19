@@ -1,6 +1,13 @@
 import type { Route } from "./+types/home";
+import { Link } from "react-router";
 import FirstInvoice from "~/components/FirstInvoice";
 import { SecondInvoice } from "~/components/SecondInvoice";
+import ProFormaInvoice from "~/components/ProFormaInvoice";
+import Recurring from "~/components/Recurring";
+
+import FirstImage from "../../public/images/general-invoice.png";
+import SecondImage from "../../public/images/car-invoice.png";
+import StandardInvoice from "../../public/images/standard-invoice.png";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,11 +16,72 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+type DataInvoice = {
+  id: number;
+  url: string;
+  image: string;
+  category: string;
+  component: React.ComponentType<any>;
+};
+
+const invoiceData: DataInvoice[] = [
+  {
+    id: 1,
+    url: "/first-invoice",
+    image: FirstImage,
+    category: "CATEGORY",
+    component: FirstInvoice,
+  },
+  {
+    id: 2,
+    url: "url-parameter",
+    image: SecondImage,
+    category: "CATEGORY",
+    component: SecondInvoice,
+  },
+  {
+    id: 3,
+    url: "url-parameter",
+    image: StandardInvoice,
+    category: "CATEGORY",
+    component: ProFormaInvoice,
+  },
+  {
+    id: 4,
+    url: "url-parameter",
+    image: SecondImage,
+    category: "CATEGORY",
+    component: Recurring,
+  },
+];
+
 export default function Home() {
   return (
-    <div className="">
-      <FirstInvoice /> <br />
-      <SecondInvoice />
-    </div>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {invoiceData.map((data, index) => (
+            <div key={data?.id} className="p-4 lg:w-1/3 md:w-1/2 w-full">
+              <Link
+                to={data?.url}
+                className="block relative group rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+              >
+                <img
+                  src={data?.image}
+                  alt="invoice"
+                  className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-all duration-300 flex items-center justify-center">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-white opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                    {data?.category}
+                  </h2>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
