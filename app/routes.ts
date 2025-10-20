@@ -6,4 +6,6 @@ export default [
   route("car-invoice", "routes/car-invoice/index.tsx"),
   route("standard-invoice", "routes/standard-invoice/index.tsx"),
   route("recurring-invoice", "routes/recurring-invoice/index.tsx"),
+  route("credit-invoice", "routes/credit-invoice/index.tsx"),
+  route("debit-invoice", "routes/debit-invoice/index.tsx"),
 ] satisfies RouteConfig;

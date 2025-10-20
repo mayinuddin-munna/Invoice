@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import FirstImage from "../../public/images/general-invoice.png";
 import SecondImage from "../../public/images/car-invoice.png";
 import StandardInvoice from "../../public/images/standard-invoice.png";
+import RecurringInvoice from "../../public/images/recurring-invoice.png";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -41,8 +42,20 @@ const invoiceData: DataInvoice[] = [
   {
     id: 4,
     url: "/recurring-invoice",
-    image: SecondImage,
+    image: RecurringInvoice,
     category: "Recurring Invoice",
+  },
+  {
+    id: 5,
+    url: "/credit-invoice",
+    image: RecurringInvoice,
+    category: "Credit Invoice",
+  },
+  {
+    id: 6,
+    url: "/debit-invoice",
+    image: RecurringInvoice,
+    category: "Debit Invoice",
   },
 ];
 
