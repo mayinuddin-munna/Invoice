@@ -1,7 +1,9 @@
-import React from 'react'
+import { CreditInvoice } from "~/components/Credit";
 
 export default function Credit() {
   return (
-    <div>Credit</div>
-  )
+    <>
+      <CreditInvoice />
+    </>
+  );
 }

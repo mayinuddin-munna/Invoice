@@ -5,6 +5,10 @@ import FirstImage from "../../public/images/general-invoice.png";
 import SecondImage from "../../public/images/car-invoice.png";
 import StandardInvoice from "../../public/images/standard-invoice.png";
 import RecurringInvoice from "../../public/images/recurring-invoice.png";
+import CreditInvoice from "../../public/images/credit-invoice.png";
+import DebitInvoice from "../../public/images/debit-invoice.png";
+import CommercialInvoice from "../../public/images/commercial-invoice.png";
+import TimesheetInvoice from "../../public/images/timesheet-invoice.png";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -48,14 +52,26 @@ const invoiceData: DataInvoice[] = [
   {
     id: 5,
     url: "/credit-invoice",
-    image: RecurringInvoice,
+    image: CreditInvoice,
     category: "Credit Invoice",
   },
   {
     id: 6,
     url: "/debit-invoice",
-    image: RecurringInvoice,
+    image: DebitInvoice,
     category: "Debit Invoice",
+  },
+  {
+    id: 7,
+    url: "/commercial-invoice",
+    image: CommercialInvoice,
+    category: "Commercial Invoice",
+  },
+  {
+    id: 8,
+    url: "/timesheet-invoice",
+    image: TimesheetInvoice,
+    category: "Timesheet Invoice",
   },
 ];
 
