@@ -1,14 +1,20 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
 
-import FirstImage from "../../public/images/general-invoice.png";
-import SecondImage from "../../public/images/car-invoice.png";
+import GeneralInvoice from "../../public/images/general-invoice.png";
+import CarInvoice from "../../public/images/car-invoice.png";
 import StandardInvoice from "../../public/images/standard-invoice.png";
 import RecurringInvoice from "../../public/images/recurring-invoice.png";
 import CreditInvoice from "../../public/images/credit-invoice.png";
 import DebitInvoice from "../../public/images/debit-invoice.png";
 import CommercialInvoice from "../../public/images/commercial-invoice.png";
 import TimesheetInvoice from "../../public/images/timesheet-invoice.png";
+
+import InterimInvoice from "../../public/images/car-invoice.png";
+import FinalInvoice from "../../public/images/car-invoice.png";
+import RetainerInvoice from "../../public/images/car-invoice.png";
+import ConsolidatedInvoice from "../../public/images/car-invoice.png";
+import CollectiveInvoice from "../../public/images/car-invoice.png";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -28,13 +34,13 @@ const invoiceData: DataInvoice[] = [
   {
     id: 1,
     url: "/general-invoice",
-    image: FirstImage,
+    image: GeneralInvoice,
     category: "General Invoice",
   },
   {
     id: 2,
     url: "/car-invoice",
-    image: SecondImage,
+    image: CarInvoice,
     category: "Car Invoice",
   },
   {
@@ -72,6 +78,36 @@ const invoiceData: DataInvoice[] = [
     url: "/timesheet-invoice",
     image: TimesheetInvoice,
     category: "Timesheet Invoice",
+  },
+  {
+    id: 9,
+    url: "/interim-invoice",
+    image: InterimInvoice,
+    category: "Interim Invoice",
+  },
+  {
+    id: 10,
+    url: "/final-invoice",
+    image: FinalInvoice,
+    category: "Final Invoice",
+  },
+  {
+    id: 11,
+    url: "/retainer-invoice",
+    image: RetainerInvoice,
+    category: "Retainer Invoice",
+  },
+  {
+    id: 12,
+    url: "/consolidated-invoice",
+    image: ConsolidatedInvoice,
+    category: "Consolidated Invoice",
+  },
+  {
+    id: 13,
+    url: "/collective-invoice",
+    image: CollectiveInvoice,
+    category: "Collective Invoice",
   },
 ];
 

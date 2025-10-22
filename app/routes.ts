@@ -10,4 +10,9 @@ export default [
   route("debit-invoice", "routes/debit-invoice/index.tsx"),
   route("commercial-invoice", "routes/commercial-invoice/index.tsx"),
   route("timesheet-invoice", "routes/timesheet-invoice/index.tsx"),
+  route("interim-invoice", "routes/interim-invoice/index.tsx"),
+  route("final-invoice", "routes/final-invoice/index.tsx"),
+  route("retainer-invoice", "routes/retainer-invoice/index.tsx"),
+  route("consolidated-invoice", "routes/consolidated-invoice/index.tsx"),
+  route("collective-invoice", "routes/collective-invoice/index.tsx"),
 ] satisfies RouteConfig;

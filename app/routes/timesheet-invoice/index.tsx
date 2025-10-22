@@ -1,3 +1,4 @@
+import { X } from "lucide-react";
 import { useState } from "react";
 
 interface TimeEntry {
@@ -171,7 +172,7 @@ export default function TimesheetInvoice() {
                         onClick={() => removeEntry(entry.id)}
                         className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors font-bold"
                       >
-                        ×
+                        <X />
                       </button>
                     </td>
                   </tr>
@@ -271,7 +272,7 @@ export default function TimesheetInvoice() {
           </div>
 
           {/* Print Button */}
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex gap-4 w-96 right-0">
             <button
               onClick={() => window.print()}
               className="flex-1 px-6 py-3 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors"
