@@ -9,8 +9,8 @@ import CreditInvoice from "../../public/images/credit-invoice.png";
 import DebitInvoice from "../../public/images/debit-invoice.png";
 import CommercialInvoice from "../../public/images/commercial-invoice.png";
 import TimesheetInvoice from "../../public/images/timesheet-invoice.png";
+import InterimInvoice from "../../public/images/interim-invoice.png";
 
-import InterimInvoice from "../../public/images/car-invoice.png";
 import FinalInvoice from "../../public/images/car-invoice.png";
 import RetainerInvoice from "../../public/images/car-invoice.png";
 import ConsolidatedInvoice from "../../public/images/car-invoice.png";
