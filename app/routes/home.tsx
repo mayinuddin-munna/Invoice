@@ -10,11 +10,11 @@ import DebitInvoice from "../../public/images/debit-invoice.png";
 import CommercialInvoice from "../../public/images/commercial-invoice.png";
 import TimesheetInvoice from "../../public/images/timesheet-invoice.png";
 import InterimInvoice from "../../public/images/interim-invoice.png";
+import FinalInvoice from "../../public/images/final-invoice.png";
+import RetainerInvoice from "../../public/images/retainer-invoice.png";
+import ConsolidatedInvoice from "../../public/images/consolidated-invoice.png";
 
-import FinalInvoice from "../../public/images/car-invoice.png";
-import RetainerInvoice from "../../public/images/car-invoice.png";
-import ConsolidatedInvoice from "../../public/images/car-invoice.png";
-import CollectiveInvoice from "../../public/images/car-invoice.png";
+// import CollectiveInvoice from "../../public/images/car-invoice.png";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -103,12 +103,12 @@ const invoiceData: DataInvoice[] = [
     image: ConsolidatedInvoice,
     category: "Consolidated Invoice",
   },
-  {
-    id: 13,
-    url: "/collective-invoice",
-    image: CollectiveInvoice,
-    category: "Collective Invoice",
-  },
+  // {
+  //   id: 13,
+  //   url: "/collective-invoice",
+  //   image: CollectiveInvoice,
+  //   category: "Collective Invoice",
+  // },
 ];
 
 export default function Home() {
