@@ -108,16 +108,16 @@ export default function FinalInvoice() {
                   className="border-b border-border hover:bg-muted/50 transition-colors"
                 >
                   <td className="py-4 px-4 text-foreground">
-                    {item.description}
+                    {item?.description}
                   </td>
                   <td className="text-right py-4 px-4 text-foreground">
-                    {item.quantity}
+                    {item?.quantity}
                   </td>
                   <td className="text-right py-4 px-4 text-foreground">
-                    ${item.rate.toFixed(2)}
+                    ${item?.rate.toFixed(2)}
                   </td>
                   <td className="text-right py-4 px-4 font-semibold text-foreground">
-                    ${(item.quantity * item.rate).toFixed(2)}
+                    ${(item?.quantity * item.rate).toFixed(2)}
                   </td>
                 </tr>
               ))}
