@@ -14,5 +14,5 @@ export default [
   route("final-invoice", "routes/final-invoice/index.tsx"),
   route("retainer-invoice", "routes/retainer-invoice/index.tsx"),
   route("consolidated-invoice", "routes/consolidated-invoice/index.tsx"),
-  route("collective-invoice", "routes/collective-invoice/index.tsx"),
+  // route("collective-invoice", "routes/collective-invoice/index.tsx"),
 ] satisfies RouteConfig;
